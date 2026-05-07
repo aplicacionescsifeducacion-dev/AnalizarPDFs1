@@ -8,7 +8,7 @@ app = Flask(__name__)
 CORS(app)
 
 REGEX_ESPECIALIDAD = re.compile(r"ESPECIALIDAD\s*:\s*(.+)", re.IGNORECASE)
-REGEX_SI = re.compile(r"\b(SI|S|SÍ)\b", re.IGNORECASE)
+REGEX_SI = re.compile(r"\b(04)\b", re.IGNORECASE)
 
 @app.route('/')
 def index():
