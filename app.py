@@ -5,7 +5,11 @@ from collections import defaultdict
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/*": {
+    "origins": "*",
+    "allow_headers": ["Content-Type", "API-KEY"],
+    "methods": ["GET", "POST", "OPTIONS"]
+}})
 
 REGEX_ESPECIALIDAD = re.compile(r"ESPECIALIDAD\s*:\s*(.+)", re.IGNORECASE)
 REGEX_SI = re.compile(r"\b(04)\b", re.IGNORECASE)
